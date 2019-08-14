@@ -9,18 +9,18 @@ export const getCardsForSearch = ({cards, columns}, searchString) => {
   output = output.filter(card => new RegExp(searchString, 'i').test(card.title));
 
   return output.map(card => {
-     //console.log('aaa', card, columns);
-     const foundColumn = columns.filter(column => card.columnId == column.id);
+    //console.log('aaa', card, columns);
+    const foundColumn = columns.filter(column => card.columnId == column.id);
 
-     //console.log('FOUND COLUMN', foundColumn[0].listId);
-     const foundList = foundColumn[0].listId;
+    //console.log('FOUND COLUMN', foundColumn[0].listId);
+    const foundList = foundColumn[0].listId;
 
-     return {
-       ...card,
-       listId: foundList,
-     }
+    return {
+      ...card,
+      listId: foundList,
+    };
   });
-}
+};
 
 // action name creator
 const reducerName = 'cards';

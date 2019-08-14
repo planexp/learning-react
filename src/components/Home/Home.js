@@ -17,13 +17,13 @@ class Home extends React.Component {
     console.log(this.props);
     return (
       <Container>
-      <main className={styles.component}>
-        <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.subtitle}>{subtitle}</h2>
-        {lists.map(listData => (
-          <ListLink key={listData.id} {...listData} />
-        ))}
-      </main>
+        <main className={styles.component}>
+          <h1 className={styles.title}>{title}</h1>
+          <h2 className={styles.subtitle}>{subtitle}</h2>
+          {lists.map(listData => (
+            <ListLink key={listData.id} {...listData} />
+          ))}
+        </main>
       </Container>
     );
   }

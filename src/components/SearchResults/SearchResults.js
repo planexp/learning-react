@@ -12,22 +12,30 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    const {cards, listId} = this.props;
+    const {cards} = this.props;
     //console.log('SEARCH RESULTS', this.props);
     return (
       <section>
-      <Container>
-        <div className={styles.component}>
-          {cards.map(cardData => {
+        <Container>
+          <div className={styles.component}>
+            {cards.map(cardData => {
             //console.log('aaa', cardData);
-            return (
-              <Link className={styles.links} to={`/list/${cardData.listId}`}>
-              <Card key={cardData.id} {...cardData}>
-              </Card></Link>
-            );
-          })}
-        </div>
-      </Container>
+              return (
+                < Link className = {
+                  styles.links
+                }
+                to = {
+                  `/list/${cardData.listId}`
+                }
+                key = {
+                  cardData.id
+                } >
+                  <Card key={cardData.id} {...cardData}>
+                  </Card></Link>
+              );
+            })}
+          </div>
+        </Container>
       </section>
     );
   }
